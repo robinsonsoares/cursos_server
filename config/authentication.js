@@ -7,8 +7,9 @@ var ExtractJwt = passportJWT.ExtractJwt;
 var JwtStrategy = passportJWT.Strategy;
 
 var jwtOptions = {
-    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-    secretOrKey: 'minhaChaveSecreta'    
+	//jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+	jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('jwt'),
+	secretOrKey: 'minhaChaveSecreta'    
 };
 
 module.exports = {
